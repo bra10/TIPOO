@@ -1,0 +1,113 @@
+{% extends "admin_text.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12   ">
+               <center> 
+               		<h1 class="page-header">{{subject}} : Textos</h1>  </center>
+					                    {% if user == 'Tutor' %}
+											<div class="col-md-1">
+											</div>
+                                           <a href="/upload_text"><button type="button" class="btn btn-primary">Subir un nuevo texto +</button></a>
+					                    {%endif%}
+      									<p> </p>
+                		</div>
+		                <p> </p>
+		                <p> </p>
+            </div>
+        </div>
+		{%if html%}
+			{{html}}
+		{%endif%}
+
+{% if list_texts %}
+	{% for i in list_texts %}
+        {% if user == 'Student' %}
+        <a href="view_text?text_material_id={{list_texts[loop.index0].id}}">
+        {% else %}
+        <a href="view_text?text_material_id={{list_texts[loop.index0].id}}">
+        {% endif %}
+        <div class="row">
+			<div class="col-md-1">
+			</div>
+            <div class="col-md-4">
+                <div class="image">
+                    {% if user == 'Student' %}      
+                    <img data-toggle="modal" data-target=".bs-example-modal-lg_{{list_texts[loop.index0].id}}" style="cursor: pointer; position:relative;" src="img/doc.png" width="300" height="200" alt="" />
+                    {% else %}
+                    <img data-toggle="modal" data-target=".bs-example-modal-lg_{{list_texts[loop.index0].id}}" style="cursor: pointer; position:relative;" src="img/doc.png" width="300" height="200" alt="" />
+                    {% endif %}
+                        {% if user == 'Student' %}
+                        <div class="views" style="position:absolute;">
+                            <i class="fa fa-eye"></i>  {{list_texts[loop.index0].number_views}}
+                        </div>
+                        {% endif %}
+                    </img>
+                </div>
+            </div>
+        </a>
+	<div class="col-md-6">
+        {% if user == 'Student' %}     
+    	<h3>{{list_texts[loop.index0].topic}}</h3>
+         	<p>{{list_texts[loop.index0].description}}</p>
+        {% else %}
+        <h3>{{list_texts[loop.index0].topic}}</h3>
+         	<p>{{list_texts[loop.index0].description}}</p>
+        {% endif %}
+                {% if user == 'Tutor' %}
+                    <a class="btn btn-warning" href="/data_text?text_material_id={{list_texts[loop.index0].id}}">Editar</i></a>
+                     <button class="btn btn-danger "  data-toggle="modal" data-target="#myModal_{{list_texts[loop.index0].id}}" > Eliminar</button>
+                    <hr>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal_{{list_texts[loop.index0].id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Eliminar Elemento</h4>
+                              </div>
+                              <div class="modal-body">
+                                
+                                <h1>Seguro que deseas continuar?</h1>
+
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" id="{{list_texts[loop.index0].id}}"  class="btn btn-success  delete_btn" value="Eliminar">Continuar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                {% endif %}
+        
+    {% if user == 'Tutor' %}                
+        <div class="onoffswitch">
+            {% if list_texts[loop.index0].able == True %}
+				<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{list_texts[loop.index0].id}}" checked>
+			{% else %}
+				<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{list_texts[loop.index0].id}}">
+			{% endif %}
+                <label class="onoffswitch-label" for="{{loop.index0}}">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+        </div>
+	{% endif %}
+	</div>
+    </div>
+	<hr>
+	
+	{% endfor %}
+{% else %}
+{% include 'no_content.tmp' %}
+{% endif %}
+
+{% endblock %}
+       
+
+
+       
+       

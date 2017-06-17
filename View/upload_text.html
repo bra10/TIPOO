@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<!--Template by Jonathan Nungaray @Jonatthu-->
+<head>
+    <meta charset="UTF-8">
+    <title>Publicar un nuevo Texto - TIPOO</title>
+    <link href="stylesheets/video.min.css" rel="stylesheet">
+    <link href="stylesheets/upload_text.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="stylesheets/dropzone.css">
+    {% include 'headerinclude.html' %}
+</head>
+
+<body>
+<div id="main">
+{% include 'header.tmp' %}
+
+<div id="edit">
+    <div id="titlee"><i class="fa fa-upload"></i> Publica un nuevo texto</div>
+    <form class="dropzone" id="sessionForm" action="{{upload_url}}" method="post" enctype="multipart/form-data">
+    <div id="infoText">
+        <div id="text"><i class="fa fa-plus"></i><br>HAZ CLICK O ARRASTRA EL ARCHIVO <br>AQUI</div>
+         <input id="invideo" type="file" name="file" />
+
+        <ul></ul>
+    </div>
+
+    </form>
+	<center><a href="/data_text"><button class="lnd"><i class="fa fa-paper-plane"></i>  Guardar</button></a></center>
+</div>
+
+
+
+
+</div>
+
+ 	<script src="js/drophere.min.js"></script>
+    <script src="js/drophere.extends_text.js"></script>
+    <script src="js/validate.min.js"></script>
+    <script src="js/validateform.min.js"></script>
+
+    </body>
+</html>

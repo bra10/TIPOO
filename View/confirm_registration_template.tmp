@@ -1,0 +1,9 @@
+{% extends "confirm_registration.html" %}
+{% block confirm %}
+	{% if not error %}
+		<h3>&iexcl;Hola {{first}} {{last}}, Bienvenido a TIPOO!</h3>
+		<hr />
+		<br />
+		El equipo de desarrollo de TIPOO le agradece la oportunidad que nos permite de ofrecerle una herramienta para el aprendizaje de las tecnolog&iacute;as orientadas a objetos. Esperamos que su experiencia durante este curso sea agradable y que el contenido del curso logre satisfacer sus ncesidades.
+	{% endif %}
+{% endblock %}

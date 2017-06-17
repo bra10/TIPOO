@@ -1,0 +1,35 @@
+application: tipoodev
+version: 1-10-4-1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+inbound_services:
+- mail
+
+handlers:
+
+- url: /stylesheets
+  static_dir: Static/stylesheets
+
+- url: /fonts
+  static_dir: Static/fonts
+
+- url: /js
+  static_dir: Static/js
+
+- url: /img
+  static_dir: Static/img 
+
+- url: /.*
+  script: Main.app
+  
+libraries:
+- name: webapp2
+  version: latest 
+
+- name: jinja2
+  version: latest 
+
+env_variables:
+  ROOT_URL: 'http://tipoodev.appspot.com/'

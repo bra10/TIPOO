@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- MENSAJE CERRAR EXAMEN -->
+<script language="JavaScript">
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    return "Ha intentado salir de esta pagina. Si ha realizado algun cambio en los campos sin hacer clic en el boton Guardar, los cambios se perderan. Seguro que desea salir de esta pagina? ";
+  }
+</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Examen</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="stylesheets/clean-blog.min.css" rel="stylesheet">
+    
+    <!-- EXAMEN CSS -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                 
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <a class="navbar-brand" href="/"> TIPOO </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <i class="fa fa-home fa-stack-1x fa-inverse "></i>  <a href="/"> Inicio  </a> 
+                    </li>
+                    <li>
+                        <i class="fa fa-user fa-stack-1x fa-inverse"></i> <a href="/"> Alumno  </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i> <a href="/logout"> Cerrar Sesión </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+     <!-- BARRA NAVEGADORA -->
+    
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/fondoAzul.jpeg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 column">
+                    <h1 class="text-center text-info">
+                        <br>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- FIN BARRA NAVEGADORA -->
+
+    <!--EXAMENNNNNNN-->
+    <boton>
+    <div class="container-fluid bg-info">
+    
+    <!--PAGINACION -->
+    <ul class="pagination">
+    
+        {% block pagination %}{% endblock %}
+
+
+    </ul></boton>
+    <!--PAGINACION -->
+    
+    <!-- EXAMEN -->
+    
+    
+    {% block exam %}{% endblock %}
+        <!-- EXAMEN -->
+        </div>
+        <!-- BOTON DE ENVIAR EXAMEN -->
+        
+    </form>         
+    
+
+    <!-- jQuery -->
+    
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript 
+    <script src="js/clean-blog.min.js"></script>
+ -->
+    
+    <!-- EXAMEN JavaScript -->
+    <script src="js/examen.js"></script>
+     
+    <script language="javascript">
+      function showPage(id , numPages){
+        
+        var i;
+        for( i = 1 ; i<=numPages;i++){
+            document.getElementById('question' + i).style.display = 'none';
+            document.getElementById('l' + i).className = 'none';
+               
+        }
+        document.getElementById('question' + id).style.display = 'block';
+        document.getElementById('l' + id).className = 'active';
+            
+      }
+
+    </script>
+
+
+
+   
+</body>
+</html>
+

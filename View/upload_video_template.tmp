@@ -1,0 +1,7 @@
+{% extends "upload_video.html" %}
+
+{% if user == 'Student' %}
+
+{% elif user == 'Tutor' %}
+
+{% endif %}

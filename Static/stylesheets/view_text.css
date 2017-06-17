@@ -1,0 +1,48 @@
+ body {
+ 	background: #e8e8e8;
+ }
+
+*{
+  padding:0;
+  margin:0;
+}
+
+#viewtext {
+   background:white;
+   box-shadow:0px 0px 15px rgba(0,0,0,0.4);
+   width:700px;
+   height:auto;
+   margin:auto;
+   margin-top:90px;
+   border-radius:3px;
+   margin-bottom:100px;
+ }
+
+#viewtext #bottom {
+   box-sizing:border-box;
+   padding:20px;
+ }
+
+video, embed {
+   width:100%;
+   height:400px;
+ }
+
+#viewtext h1 {
+   font-size:30px;
+   margin-bottom:10px;
+ }
+
+#viewtext h2 {
+   font-size:16px;
+   margin-bottom:20px;
+ }
+
+#viewtext p {
+   font-size:16px;
+   font-family:'Open Sans', sans-serif;
+ }
+
+#viewvideo i {
+  color: rgb(55, 145, 200);
+}

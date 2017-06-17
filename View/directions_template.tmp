@@ -1,0 +1,5 @@
+{% extends "directions.html" %}
+{% block comenzar_examen %}
+	<boton> <p><a href="/exam?id_exam={{exam_id}}"><button type="button" class="btn btn-success btn-lg">Comenzar examen {{unit}} </button></p></a> </boton>		
+{% endblock %}
+

@@ -1,0 +1,7 @@
+{% extends "tracker.html" %}
+
+{% block all_track %}
+	{{html}}
+{% endblock %}
+	
+{% block date_track %}{% endblock %}

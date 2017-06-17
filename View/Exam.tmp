@@ -1,0 +1,330 @@
+{% extends "Exam.html" %}
+{% block cont_title %}
+
+{% endblock %}
+
+{% block logout %}
+	<a href="/logout/{{logout}}">Cerrar sesi&oacute;n</a>
+{% endblock %}
+
+{% block form_cont %}
+{% if user == 'Student' %}
+	<ul class="breadcrumbs"> <li><a href="/home">Home</a></li> <li>Alumno</li><li class="current"><a href="">Examen</a></li> </ul>
+	{% if status == 0 %}
+	<form id="target" action="/exam?exam_id={{exam.id}}" method="post" data-abide>	
+		<div class="row white">
+			<div class="large-12 columns center">	
+				<h2>Examen Unidad {{exam.unit}}</h2><h3><em>"{{exam.subject}}"</em></h3>
+				<h4><small>Aprendizaje: {{exam.learning_style}} Nivel: {{exam.level}}</small></h4>	
+				
+			</div>
+		</div>
+		{% for value in list %}
+		<div class="row white">
+			<div class="large-12 columns">	
+				<h5>{{value.index+1}}. {{exam.question[value.index].text}}</h5>	
+			</div>
+			<div class="large-3 columns right">	
+				<label><input type="radio" value="1" name="r[{{value.index}}]" /> {{exam.question[value.index].answers[0]}}</label>
+			</div>
+			<div class="large-3 columns right">
+				<label><input type="radio" value="2" name="r[{{value.index}}]" /> {{exam.question[value.index].answers[1]}}</label>
+			</div>
+			<div class="large-3 columns right">
+				<label><input type="radio" value="3" name="r[{{value.index}}]" /> {{exam.question[value.index].answers[2]}}</label>
+			</div>
+			<div class="large-3 columns right">
+				<label><input type="radio" value="4" name="r[{{value.index}}]" /> {{exam.question[value.index].answers[3]}}</label>
+			</div>
+		</div>
+		{% endfor %}
+		<div class="row white">
+			<div class="large-12 columns">
+				<input id="ti" type="hidden" name="time_init" value="{{time_init}}" />
+				<input type="submit" class="button expand success" value="Enviar">
+			</div>
+		</div>
+	</form>
+	{% elif status == 1 %}	
+	<div class="row">
+		<div class="panel">
+				Tu puntaje fue {{feedback_message}} ({{test_score}}%).<br />	
+				{{count_correct_answers}} respuestas correctas de {{count_question}}.
+		</div>
+	</div>
+	{% endif %}
+	</script>
+{% elif user == 'Tutor' %}
+	{% if not exam %}
+	<ul class="breadcrumbs"> <li><a href="/home">Home</a></li> <li>Tutor</li><li class="current"><a href="">Crear examen</a></li> </ul>
+	<form action="/exam" method="post" data-abide>
+		<div class="row">
+			<div class="large-12 columns">
+				<label>Tipo de aprendizaje 			
+				<select name="learning_style" required>
+					<option value="">Selecciona</option>
+					<option value="0">K</option>
+					<option value="1">A</option>
+					<option value="2">V</option>			
+				</select>
+				</label>
+				<small class="error">Ingrese un tipo de aprendizaje.</small>
+			</div>
+			<div class="large-12 columns">
+				<label>Nivel 			
+				<select name="level" required>
+					<option value="">Selecciona</option>
+					<option value="0">B</option>
+					<option value="1">I</option>
+					<option value="2">A</option>			
+				</select>
+				</label>
+				<small class="error">Ingrese el nivel.</small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<label>Unidad <input type="text" name="unit" placeholder="Ingresar unidad del examen" maxlength="1" required pattern="integer" />
+				</label>
+				<small class="error">Ingrese la unidad.</small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<label>Tema del examen <input type="text" name="subject" placeholder="Nombre del tema del examen" required /></label>
+				<small class="error">Ingrese el tema del examen.</small>
+			</div>
+		</div>	
+		<div id="myDiv">
+			<div class="row">
+				<div class="large-10 columns">
+					<input type="hidden" value="0" id="theValue" />
+					<label><strong>1.</strong> Ingresar pregunta <input name="q[0]" type="text" placeholder="Redactar pregunta aqu&iacute;..." required />
+					</label>
+					<small class="error">Ingrese una pregunta v&aacute;lida.</small>
+				</div>
+				<div class="large-2 columns">
+					<label>Puntos <input name="v[0]" type="text" placeholder="0..10" maxlength="2" required pattern="integer" /></label>
+					<small class="error">Ingrese los puntos.</small>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 1</label>
+						<div class="small-10 columns">
+							<input name="a[0]" placeholder="Primera opci&oacute;n" type="text" required>
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta"><input name="r[0]" value="1" type="checkbox"></span>
+						</div>
+					</div>
+				</div>
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 2</label>
+						<div class="small-10 columns">
+							<input name="a[0]" placeholder="Segunda opci&oacute;n" type="text" required>
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta"><input name="r[0]" value="2" type="checkbox"></span>
+						</div>
+					</div>
+				</div>
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 3</label>
+						<div class="small-10 columns">
+							<input name="a[0]" placeholder="Tercera opci&oacute;n" type="text" required>
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta"><input name="r[0]" value="3" type="checkbox"></span>
+						</div>
+					</div>
+				</div>
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 4</label>
+						<div class="small-10 columns">
+							<input name="a[0]" placeholder="Cuarta opci&oacute;n" type="text" required>
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta"><input name="r[0]" value="4" type="checkbox"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns center">
+				<a href="javascript:;" onclick="addElement();" class="button expand">A&ntilde;adir Pregunta</a>
+			</div>
+			<div class="large-6 columns center">
+				<a href="javascript:;" onclick="removeElement();" class="button warning expand">Remover Pregunta</a>
+			</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="middle-12 columns">
+				<button type="submit" class="button expand success">Guardar Examen</button>
+			</div>
+		</div>	
+	</form>
+	{% else %}
+		<ul class="breadcrumbs"> <li><a href="/home">Home</a></li> <li>Tutor</li><li class="current"><a href="">Editar examen</a></li> </ul>
+		<form action="/exam?exam_id={{exam.id}}" method="post" data-abide>		
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Tipo de aprendizaje <select name="learning_style">
+						<option>Seleccionaz</option>
+						{% if 'Kinestesico' == exam.learning_style %}
+							<option value="0" selected>K</option>
+							<option value="1">A</option>
+							<option value="2">V</option>			
+						{% elif 'Auditivo' == exam.learning_style %}
+							<option value="0">K</option>
+							<option value="1" selected>A</option>
+							<option value="2">V</option>
+						{% elif 'Visual' == exam.learning_style %}
+							<option value="0">K</option>
+							<option value="1">A</option>
+							<option value="2" selected>V</option>			
+						{% endif %}
+					</select></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Nivel <select name="level">
+						<option>Selecciona</option>
+						{% if 'Basico' == exam.level %}
+							<option value="0" selected>B</option>
+							<option value="1">I</option>
+							<option value="2">A</option>			
+						{% elif 'Intermedio' == exam.level %}
+							<option value="0">B</option>
+							<option value="1" selected>I</option>
+							<option value="2">A</option>
+						{% elif 'Avanzado' == exam.level %}
+							<option value="0">B</option>
+							<option value="1">I</option>
+							<option value="2" selected>A</option>			
+						{% endif %}
+					</select></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Unidad <input type="text" value="{{exam.unit}}" name="unit" /></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Tema del examen <input type="text" value="{{exam.subject}}" name="subject" /></label>
+				</div>
+			</div>
+			{% for value in list  %}
+		<div id="myDiv">
+				<div class="row">
+					<div class="large-10 columns">
+						<input type="hidden" value="0" id="theValue" />
+						<label>Pregunta {{value.index+1}}<input type="text" value="{{exam.question[value.index].text}}" name="q[value.index]" /></label>
+					</div>
+					<div class="large-2 columns">
+						<label>Puntos <input type="text" value="{{exam.question[value.index].value}}" name="v[value.index]" /></label>
+					</div>
+				</div>
+			<div class="row">
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 1</label>
+						<div class="small-10 columns error">
+							<input aria-invalid="true" data-invalid="" value="{{exam.question[value.index].answers[0]}}" name="a[value.index]" placeholder="Primera opci&oacute;n" required="" type="text">
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta">
+								{% if 1 in exam.question[value.index].correct_answers %}
+								<input type="checkbox" value="1" name="r[value.index]" checked/>
+								{% else %}
+								<input type="checkbox" value="1" name="r[value.index]" />
+								{% endif %}
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 2</label>
+						<div class="small-10 columns">
+							<input value="{{exam.question[value.index].answers[1]}}" name="a[value.index]" placeholder="Segunda opci&oacute;n" required="" type="text">
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta">
+								{% if 2 in exam.question[value.index].correct_answers %}
+									<input type="checkbox" value="2" name="r[value.index]" checked/></br>
+								{% else %}
+									<input type="checkbox" value="2" name="r[value.index]" /></br>
+								{% endif %}
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 3</label>
+						<div class="small-10 columns">
+							<input value="{{exam.question[value.index].answers[2]}}" name="a[value.index]" placeholder="Tercera opci&oacute;n" required="" type="text">
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta">
+								{% if 3 in exam.question[value.index].correct_answers %}
+									<input type="checkbox" value="3" name="r[value.index]" checked/></br>
+								{% else %}
+									<input type="checkbox" value="3" name="r[value.index]" /></br>
+								{% endif %}
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="large-3 columns">
+					<div class="row collapse">
+						<label>Opci&oacute;n 4</label>
+						<div class="small-10 columns">
+							<input value="{{exam.question[value.index].answers[3]}}" name="a[value.index]" placeholder="Cuarta opci&oacute;n" required="" type="text">
+						</div>
+						<div class="small-2 columns">
+							<span class="postfix" title="Respuesta correcta">
+								{% if 4 in exam.question[value.index].correct_answers %}
+								<input type="checkbox" value="4" name="r[value.index]" checked/></br>
+								{% else %}
+								<input type="checkbox" value="4" name="r[value.index]" /></br>
+								{% endif %}
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+				
+
+
+					
+		</div>
+			{% endfor %}
+		<div class="row">
+			<div class="large-6 columns center">
+				<a href="javascript:;" onclick="addElement();" class="button expand">A&ntilde;adir Pregunta</a>
+			</div>
+			<div class="large-6 columns center">
+				<a href="javascript:;" onclick="removeElement();" class="button warning expand">Remover Pregunta</a>
+			</div>
+		</div>
+			</div>
+			<div class="row">
+				<input class="button success expand" type="submit" value="Enviar">
+			</div>
+		</form>
+	{% endif %}
+{% endif %}
+{% endblock %}

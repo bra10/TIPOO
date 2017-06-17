@@ -1,0 +1,44 @@
+{% if user %}
+
+<div id="navBar" class="mainbg">
+        <ul id="logoSection">
+            <li><a href="/"><i class="fa fa-inbox"></i>Tipoo</a></li>
+        </ul>
+
+        <ul id="userSection">
+            <li><a href="/home" class="active"><i class="fa fa-home"></i>  Inicio</a></li>
+            <li><a href="/"><i class="fa fa-plug"></i>
+            {% if user == 'Tutor' %}
+                Tutor
+            {% else %}
+                Alumno
+            {% endif %}     
+            </a></li>
+
+            <li><a href="/logout"><i class="fa fa-pencil"></i>  Cerrar Sesión</a></li>
+        </ul>
+        <ul>
+            <li id="bar"><i class="fa fa-bars"></i></li>
+            <li id="barT"><i class="fa fa-bars"></i></li>
+        </ul>
+    </div>
+    
+    {% else %}
+    
+    <div id="navBar" class="mainbg">
+        <ul id="logoSection">
+            <li><a href="/"><i class="fa fa-inbox"></i>Tipoo</a></li>
+        </ul>
+      
+        <ul id="userSection">
+            <li><a href="/" class="active"><i class="fa fa-home"></i>  Inicio</a></li>
+            <li><a href="/login"><i class="fa fa-plug"></i>  Iniciar Sesión</a></li>
+            <li><a href="/login#signup"><i class="fa fa-pencil"></i>  Registrarse</a></li>
+        </ul>
+        <ul>
+            <li id="bar"><i class="fa fa-bars"></i></li>
+            <li id="barT"><i class="fa fa-bars"></i></li>
+        </ul>
+    </div>
+    
+    {% endif %}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<!--Template by Jonathan Nungaray @Jonatthu-->
+<head>
+    <meta charset="UTF-8">
+    <title>Home Texts - TIPOO</title>
+    <link href="stylesheets/video.min.css" rel="stylesheet">
+    {% include 'headerinclude.html' %}
+</head>
+
+<body>
+<div id="main">
+{% include 'header.tmp' %}
+    
+<div id="separador" style="background:url(https://linderonorte.files.wordpress.com/2013/07/uabc-1.jpg);background-size:cover;background-position:center;">
+        <h1><i class="fa fa-video-camera"></i> Videos de {% block type_user %}{% endblock %}</h1>
+</div>
+<div id="menu"><div><!--<span class="left filter"><i class="fa fa-sliders"></i> Filtrar <ul><li><i class="fa fa-bookmark"></i> Asignatura</li><li><i class="fa fa-user"></i>
+ Tutor</li></ul></span>--><!--<span class="activespan right"><i class="fa fa-th-large"></i></span><span class="right"><i class="fa fa-th-list"></i></span>--><span id="gToggle" class="right"><i class="fa fa-sort"></i> Ocultar todo</span></div></div>
+    
+    <div class="container">
+        {% block upload_button %}{% endblock %}
+        {% block texts_list %}{% endblock %} <!-- asi   se manda llamar al bloque del template -->
+        
+    </div>
+    
+        
+</div> 
+    
+    <script src="js/video.min.js"></script>
+    </body>
+</html>

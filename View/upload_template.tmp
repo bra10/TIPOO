@@ -1,0 +1,49 @@
+{% extends "upload.html" %}
+{% if user == 'Student' %}
+	{% block form_upload %}
+	<form method="post" action="{{upload_url}}" enctype="multipart/form-data">
+	<input placeholder="Upload video: " type="file" name="file" />
+	<input type="submit" name="submit" value="Submit" />
+	</form>
+	{% endblock %}
+{% else %}
+{% block form %}
+	<form action="{{upload_url}}" method="post" enctype="multipart/form-data">
+{% endblock %}
+
+{% block chapters %}
+	<select name="chapter">
+		{% for href,chapter in chapters %}
+	  		<option value="{{href}}">{{chapter}}</option>
+		{% endfor %}
+	</select>
+{% endblock %}
+
+{% block subjects %}
+	<select name="subject">
+		{% for href,subject in subjects %}
+	  		<option value="{{href}}">{{subject}}</option>
+		{% endfor %}
+	</select>
+{% endblock %}
+
+{% block level %}
+	<select name="level">
+		{% for href,level in levels %}
+	  		<option value="{{href}}">{{level}}</option>
+		{% endfor %}
+	</select>
+{% endblock %}
+
+{% block type %}
+	{% for id,type in types %}
+		<input id="radio{{id}}" type="radio" name="type" value="{{id}}">
+		<label for="radio{{id}}">{{type}}</label>
+	{% endfor %}
+	{% for id,field in fields %}
+		<article id="field-radio{{id}}">
+			{{field}}
+		</article>
+	{% endfor %}
+{% endblock %}
+{% endif %}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - TIPOO</title>
+	<link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/foundation.css" />
+	<link rel="shortcut icon" href="img/favicon.png" />
+    <script src="js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+    
+		<header class="fixed">
+			<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
+				<ul class="title-area">
+					<li class="name">
+						<h1><a href="/">TI<strong>POO</strong></a></h1>
+					</li>
+					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Men&uacute;</span></a></li>
+				</ul>
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+					<form action="/signin" method="post">
+					<ul class="right">
+						<li class="has-form">
+							<input  type="email" name="email" placeholder="Email" value="tipoo@gmail.com" />
+						</li>
+						<li class="has-form">
+							<input type="password" name="pwd" placeholder="Contrase&ntilde;a" value="123456" />
+						</li>
+						<li class="has-form">
+							<button type="submit" class="success button">Entrar</button>
+						</li>
+					</ul>
+					</form>
+				</section>
+			</nav>
+		</header>
+		<main class="page-row page-row-expanded maincontent">
+			<div class="row">
+				<div class="large-12 columns center">
+					<img src="img/registro.png">
+				</div>
+			</div>
+			<form action="/signup" method="post" data-abide>
+				<div class="row">
+					<div class="large-6 columns">
+						<label>Nombre <input class="input" type="text" name="first" placeholder="Nombre" required pattern="[a-zA-Z]+"></label>
+						<small class="error">Se requiere ingresar su nombre para proceder con el registro.</small>
+					</div>
+					<div class="large-6 columns">
+						<label>Apellido <input class="input" type="text" name="last" placeholder="Apellido" required pattern="[a-zA-Z]+"></label>
+						<small class="error">Se requiere ingresar su apellido para proceder con el registro.</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<label>Correo electr&oacute;nico <input class="input" type="email" name="email" id="email" placeholder="Correo electr&oacute;nico" required></label>
+						<small class="error">Se requiere ingresar su correo electr&oacute;nico v&aacute;lido para proceder con el registro.</small>
+					</div>
+				</div>		
+				<div class="row">
+					<div class="large-12 columns">
+						<label>Confirmar correo electr&oacute;nico <input class="input" type="text" name="email_confirm" placeholder="Confirmar correo electr&oacute;nico" required pattern="[a-zA-Z]+" data-equalto="email"></label>
+						<small class="error">Los correos ingresados no coinciden.</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<label>Contrase&ntilde;a <input class="input" type="password" id="password" name="pwd" placeholder="Contrase&ntilde;a" required pattern="[a-zA-Z]+"></label>
+						<small class="error">Se requiere ingresar una contrase&ntilde;a v&aacute;lida para proceder con el registro.</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<label>Confirmar contrase&ntilde;a <input class="input" type="password" name="pwd_confirm" placeholder="Confirmar contrase&ntilde;a" required pattern="[a-zA-Z]+" data-equalto="password"></label>
+						<small class="error">Las contrase&ntilde;as no coinciden.</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<h5>Fecha de nacimiento:</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-4 columns">
+						<label>D&iacute;a <input class="input" type="text" name="d" placeholder="dd" maxlength="2" required pattern="integer" /></label>
+						<small class="error">Ingrese un d&iacute;a v&aacute;lido.</small>
+					</div>
+					<div class="large-4 columns">
+						<label>Mes
+							<select name="m" required pattern="integer">
+								<option value="">Selecciona el mes</option>
+								<option value="1">Enero</option>
+								<option value="2">Febrero</option>
+								<option value="3">Marzo</option>
+								<option value="4">Abril</option>
+								<option value="5">Mayo</option>
+								<option value="6">Junio</option>
+								<option value="7">Julio</option>
+								<option value="8">Agosto</option>
+								<option value="9">Septiembre</option>
+								<option value="10">Octubre</option>
+								<option value="11">Noviembre</option>
+								<option value="12">Diciembre</option>
+							</select>						
+						</label>
+						<small class="error">Selecciona tu mes de nacimiento.</small>
+					</div>
+					<div class="large-4 columns">
+						<label>A&ntilde;o <input class="input" type="text" name="a" placeholder="aaaa" maxlength="4" required pattern="integer" /></label>
+						<small class="error">Ingrese un a&ntilde;o v&aacute;lido.</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<h5>G&eacute;nero:</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-2 columns">
+						<label><strong>Hombre</strong> <input class="radio-input" type="radio" name="sex" value="male" checked></label>	
+					</div>
+					<div class="large-10 columns">
+						<label><strong>Mujer</strong> <input class="radio-input" type="radio" name="sex" value="female"></label>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">				
+						<label><h5>Imagen:</h5> <input class="input" type="file" name="picture"/></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<input class="button success expand" type="submit" value="Crear cuenta">
+					</div>
+				</div>
+			</form>
+		</main>
+		 
+		<footer class="page-row footer">
+			<div class="row">
+				<div class="medium-4 medium-4 push-8 columns">
+				  <ul class="social">
+					  <li><a href="http://www.twitter.com/" class="twitter"></a></li>
+					  <li><a href="http://www.facebook.com/" class="facebook"></a></li>
+					  <li><a href="mailto:tipoo.project@gmail.com" class="mail"></a></li>
+					</ul>
+				 </div>
+				 <div class="medium-8 medium-8 pull-4 columns">
+					<a href="#">Ayuda</a> | <a href="#">Nosotros</a> | <a href="mailto:tipoo.project@gmail.com">Cont&aacute;ctanos</a>
+				   <p class="copyright">D.R. &copy;2014 Facultad de Ciencias Qu&iacute;micas e Ingenier&iacute;a, Universidad Aut&oacute;noma de Baja California Calzada Universidad 14418, Parque Industrial Internacional Tijuana, Tijuana, Baja California, M&eacute;xico C.P. 22390</p>
+				</div>
+			</div>
+		</footer>
+  		<script src="js/vendor/jquery.js"></script>
+		<script src="js/foundation.min.js"></script>
+		<script>
+		  $(document).foundation();
+		</script>
+	</body>
+</html>

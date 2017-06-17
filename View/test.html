@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="Keywords" content="tutorial,inteligente,poo,programaci&oacute;n,orientado,objetos">
+		<meta name="Description" content="Sistema de tutoria inteligente adaptivo para el un mejor aprendizaje de la programaci&oacute;n orientada a objetos">
+		<meta name="author" content="UABC">
+		<title>TIPOO</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="/js/upload.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Quando' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="stylesheets/upload.css">
+	</head>
+	<body>
+				<header>
+			<figure id="logo">
+				<a href="/"> <img alt="logo" src="img/logo.svg" />
+				<figcaption>
+					Tutorial Inteligente
+				</figcaption> </a>
+			</figure>
+			<div id="logout">
+				{% block logout %} {% endblock %}
+			</div>
+		</header>
+		<section>
+		<h1>Crea ex&aacute;men</h1>
+		<form action="/upload-test" method="post">
+		<div>Unidad: {% block chapters %}{% endblock %}</div>
+		<div>Tema: {% block subjects %}{% endblock %}</div>
+		<div>Complejidad: {% block level %}{% endblock %}</div>
+		<div>N&uacute;mero de preguntas: <input type="number" name="question" min="1" max="100" value="1"></div>
+		<div>N&uacute;mero de opciones: <input type="number" name="option" min="1" max="5" value="1"></div>
+		<div><input type="submit" value="Enviar" ></div>
+		</section>
+		</form>
+	</body>
+</html>

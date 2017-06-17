@@ -1,0 +1,177 @@
+/*
+
+	registroDeTutores.css
+	Ver. 1
+	por Ian Alfonso Ruiz Naranjo
+	@Ian_A_Ruiz_N
+	/ian.a.ruiz.n
+	Primavera, 2015
+
+*/
+
+body{
+	margin: 0px;
+	font-family: 'Abel', sans-serif;
+	cursor: default;
+}
+.contenedor{
+	position: absolute;
+	width: 400px;
+	height: 800px;
+	top: 0px;
+	left: 50%;
+	margin-left: -200px;
+	font-family: 'Abel', sans-serif;
+}
+.logo{
+	float: left;
+	width: 400px;
+	height: 250px;
+	text-align: center;
+	color: rgb(0,105,140);
+	font-size: 100px;
+	line-height: 250px;
+	text-decoration: none;
+}
+.titulo{
+	float: left;
+	width: 400px;
+	height: 60px;
+	background-color: rgb(0,105,140);
+	text-align: center;
+	line-height: 60px;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+.linea{
+	float: left;
+	width: 400px;
+	height: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px;
+	border-bottom-color: rgb(144,144,144);
+	border-bottom-style: solid;
+}
+.campo{
+	float: left;
+	width: 400px;
+	height:60px;
+	margin-bottom: 3px;
+}
+.caja{
+	width: 390px;
+
+	border-radius: 3px;
+	/* height: 28px; */
+	box-sizing: border-box;
+	border:none;
+	margin-left: 5px;
+	margin-top: 14px;
+	border-style: solid;
+	border-width: 1px;
+	border-color:  rgb(144,144,144);
+	text-align: center;
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+}
+.linea2{
+	float: left;
+	width: 400px;
+	height: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px;
+	border-bottom-color: rgb(144,144,144);
+	border-bottom-style: solid;
+}
+.cajaOpciones{
+	width: 390px;
+	height: 28px;
+	border:none;
+	margin-left: 5px;
+	margin-top: 14px;
+	border-style: solid;
+	border-width: 1px;
+	border-color:  rgb(144,144,144);
+	text-align: center;
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+}
+.boton{
+	float: left;
+	margin-left:120px; 
+	width:160px;
+	height: 40px;
+	background-color: rgb(0,105,140);
+	border-style: none;
+	color: #FFFFFF;
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+}
+.boton:hover{
+	background-color: #248BBD;
+}
+.boton:active{
+	background-color: #CC0057;
+}
+.aviso{	
+	float:left;
+	height: 25px;
+	width: 350px;
+	margin-left: 25px;
+	text-align: center;
+	line-height: 25px;
+	color: #B90000;
+	font-size: 14px;
+}
+.bg {
+	position: fixed;
+	z-index:18;
+	width:100%;
+	background:rgba(0,0,0,0.9);
+	height:100%;
+}
+
+.msgmodal {
+	position: fixed;
+	z-index:19;
+	width:400px;
+	margin:auto;
+	text-align: center;
+	background:white;
+	height:440px;
+	padding:30px;
+	box-sizing:border-box;
+	border-radius:3px;
+	font-size:26px;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+
+
+.msgmodal span {
+	font-size:18px;
+}
+
+.msgmodal button {
+	position:absolute;
+	padding:15px;
+	margin:auto;
+	width:100px;
+	right:0;
+	font-family:'Open Sans', sans-serif;
+	left:0;
+	bottom:20px;
+	font-size:14px;
+	background:#e8e8e8;
+	border:1px solid #CCC;
+	border-radius:3px;
+}

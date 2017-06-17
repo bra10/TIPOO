@@ -1,0 +1,27 @@
+{% extends "explorer.html" %}
+
+{% block upload_button %}
+	{% if user == 'Student' %}
+		<div class="buttonupload">
+            <a href="/tracker"><button class="button"><i class="fa fa-upload"></i> Ver tracking</button></a>
+        </div>
+    {% endif %}		
+{% endblock %}
+
+{% block type_user %}
+
+	{% if user == 'Tutor' %}
+		{{tutor_name}}
+	{% else %}
+		{{student_name}}
+	{% endif %}		
+{% endblock %}
+
+
+{% block videos_list %}
+	{% if html %}
+		{{html}}
+	{% else %}
+		<p id="novideos">;( <br> No hay videos disponibles</p>
+	{% endif %}
+{% endblock %}

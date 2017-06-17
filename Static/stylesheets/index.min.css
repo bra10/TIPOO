@@ -1,0 +1,510 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body{
+	background:#1c1c1c;
+	margin:0;
+	width:100%;
+	height:auto;
+	overflow-x:hidden;
+	font-family:abel,sans-serif;
+	font-size:12px
+}
+
+button {
+	cursor: pointer;
+}
+
+
+a{
+	text-decoration:none;
+	color:inherit;
+	cursor: pointer;
+}
+
+a:hover{
+	color:#CCC
+}
+
+a.active{
+	color:#ccc
+}
+
+h1{
+	margin:0;
+	padding:0
+}
+
+p{
+	margin:0;
+	padding:0
+}
+
+.mainbg{
+	background:#2c2c2c
+}
+
+.padBox{
+	box-sizing:border-box
+}
+
+.sul{
+	width:auto;
+	margin:0;
+	font-size:16px;
+	padding:0
+}
+
+.cV{
+	background:#3669bc
+}
+
+.cA{
+	background:#489d55
+}
+
+.cK{
+	background:#bc365f
+}
+
+.icV{
+	color:#3669bc
+}
+
+.icA{
+	color:#489d55
+}
+
+.icK{
+	color:#bc365f
+}
+
+.fit-con{
+	width:100%;
+	margin:0 auto
+}
+
+.fit-con div{
+	display:inline-block;
+	float:left;
+	height:auto;
+	padding:30px
+}
+
+.fit-3div{
+	width:33.33%;
+	margin-top:0
+}
+
+.fit-2div{
+	width:49.44%
+}
+
+#main{
+	background:#1c1c1c
+}
+
+#navBar{
+	position:fixed;
+	background:#1c1c1c;
+	width:100%;
+	z-index:1000;
+	height:60px;
+	overflow:hidden;
+	color:white;
+	top:0;
+	left:0;
+	font-size:16px
+}
+
+#navBar ul{
+	list-style:none;
+	display:inline-block;
+	width:auto;
+	margin:0;
+	line-height:60px;
+	font-size:16px;
+	padding:0
+}
+
+#navBar #bar{
+	display:none
+}
+
+#navBar #barT{
+	display:none
+}
+
+#navBar #logoSection{
+	position:fixed;
+	top:0;
+	left:20px
+}
+
+#navBar #logoSection li{
+	display:inline-block;
+	font-size:35px;
+	padding:0;
+	font-weight:700;
+	margin:0
+}
+
+#navBar #searchSection{
+	position:fixed;
+	font-family:'Open Sans',sans-serif;
+	font-size:13px;
+	top:0;
+	cursor:pointer;
+	left:150px
+}
+
+#navBar #searchSection li{
+	display:inline-block
+}
+
+#navBar #userSection{
+	position:fixed;
+	font-family:'Open Sans',sans-serif;
+	font-size:13px;
+	right:20px
+}
+
+#navBar #userSection li{
+	display:inline-block;
+	width:auto;
+	margin-right:15px
+}
+
+#navBar li .fa-search{
+	margin-left:10px;
+	-ms-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	transform:rotate(90deg)
+}
+
+#landScape{
+	background-image:url(http://www.counseling.msu.edu/files_counseling/content/students1.jpg);
+	background-size:cover;
+	background-position:center;
+	width:100%;
+	margin-top:50px
+}
+
+#landScape #content{
+	background:rgba(0,0,0,0.5);
+	color:white;
+	width:100%;
+	padding:20px;
+	font-size:28px
+}
+
+#landScape #title{
+	font-size:110px;
+	margin-top:50px;
+	text-align:center
+}
+
+#landScape #message{
+	width:100%;
+	max-width:800px;
+	margin:0 auto;
+	margin-top:50px;
+	text-align:justify
+}
+
+#landScape #buttons{
+	width:100%;
+	max-width:330px;
+	margin:0 auto;
+	margin-top:100px;
+	text-align:center
+}
+
+button.lnd{
+	padding:15px 25px;
+	margin-left:10px;
+	font-size:15px;
+	margin-bottom:18px;
+	color:white;
+	border:0;
+	border-radius:5px
+}
+
+#landScape #login{
+	background:#1359aa
+}
+
+#landScape #signup{
+	background:#1c1c1c
+}
+
+#presentation{
+	width:100%;
+	text-align:center;
+	background:#fff;
+	padding:20px;
+	padding-top:60px;
+	padding-bottom:60px
+}
+
+#presentation h1{
+	font-size:45px
+}
+
+#presentation p{
+	margin-top:20px;
+	font-size:18px
+}
+
+#presentation #controls{
+	max-width:600px;
+	margin:0 auto;
+	margin-top:30px
+}
+
+#presentation #controls ul{
+	list-style:none;
+	display:inline-block;
+	width:auto;
+	margin:0;
+	font-size:16px;
+	padding:0
+}
+
+#presentation #controls ul li{
+	list-style:none;
+	display:inline-block;
+	width:auto;
+	font-weight:700;
+	margin:0;
+	cursor:pointer;
+	margin-right:10px;
+	font-size:18px;
+	padding:0
+}
+
+#typesSlider{
+	background:#fff;
+	width:100%;
+	height:auto;
+	overflow:auto;
+	position:relative;
+	-ms-touch-action:pan-y;
+	touch-action:pan-y
+}
+
+#typesSlider .slide{
+	width:100%;
+	margin:0;
+	height:490px
+}
+
+#typesSlider div{
+	margin-top:0;
+	width:100%;
+	background:rgba(255,255,255,0.9);
+	text-align:center;
+	height:490px
+}
+
+#typesSlider h1{
+	padding-top:80px;
+	font-size:38px
+}
+
+#typesSlider i{
+	margin-top:40px;
+	margin-bottom:40px;
+	font-size:60px;
+	color:white;
+	padding:30px;
+	border-radius:100%
+}
+
+#typesSlider p{
+	font-size:18px;
+	width:100%;
+	max-width:600px;
+	margin:0 auto
+}
+
+#testSection{
+	width:100%;
+	text-align:center;
+	color:white;
+	padding:120px;
+	background:#383838
+}
+
+#testSection h1{
+	font-size:35px;
+	padding-top:20px
+}
+
+#testSection p{
+	margin-top:20px;
+	font-size:18px
+}
+
+#testSection button{
+	background:#1359aa;
+	margin-top:30px
+}
+
+#footer{
+	font-family:'Open Sans',sans-serif;
+	color:white
+}
+
+#footer div{
+	background:#1c1c1c
+}
+
+#footer p{
+	font-size:13px;
+	text-align:justify
+}
+
+#footer ul{
+	padding:30px
+}
+
+@media screen and (max-width:700px){
+	#navBar #logoSection{
+		left:10px
+	}
+
+	#navBar #searchSection{
+		left:120px
+	}
+
+	#navBar #userSection{
+		right:0
+	}
+
+	#navBar #userSection li{
+		margin-right:10px
+	}
+
+	.fit-3div{
+		width:50%
+	}
+
+	.fit-2div{
+		width:50%
+	}
+
+	#testSection{
+		padding:20px
+	}
+
+}
+
+@media screen and (max-width:600px){
+	.fit-3div{
+		width:100%
+	}
+
+	.fit-2div{
+		width:50%
+	}
+
+	#navBar #bar{
+		display:inline;
+		position:fixed;
+		z-index:99;
+		font-size:25px;
+		right:20px;
+		top:2px
+	}
+
+	#navBar #barT{
+		display:none;
+		position:fixed;
+		font-size:25px;
+		right:20px;
+		top:2px
+	}
+
+	#navBar #logoSection{
+		font-size:35px
+	}
+
+	#navBar #searchSection i,#navBar #userSection i{
+		font-size:20px;
+		line-height:50px
+	}
+
+	#navBar #logoSection{
+		left:10px
+	}
+
+	#navBar #searchSection{
+		top:60px;
+		position:absolute;
+		width:100%;
+		background:#3b3b3b;
+		left:0
+	}
+
+	#navBar #userSection{
+		top:120px;
+		position:absolute;
+		left:0;
+		width:100%
+	}
+
+	#navBar #userSection li{
+		display:table;
+		padding-left:10px;
+		border-bottom:1px solid #3c3c3c;
+		width:100%
+	}
+
+	#landScape #content{
+		font-size:18px
+	}
+
+	#landScape #title{
+		font-size:60px
+	}
+
+	#landScape #buttons{
+		width:100%;
+		max-width:130px;
+		margin:0 auto;
+		margin-top:50px;
+		text-align:center
+	}
+
+	#landScape button{
+		padding:10px 15px;
+		font-size:13px;
+		margin-left:0
+	}
+
+	#landScape #login{
+		margin:0 auto;
+		margin-bottom:10px
+	}
+
+	#presentation h1{
+		font-size:30px
+	}
+
+	#presentation p{
+		margin-top:20px;
+		font-size:14px
+	}
+
+}
+
+
+small {
+
+    color:#5f5f5f;
+
+    font-family:'Open Sans',sans-serif;
+
+    margin: 0;
+
+
+}

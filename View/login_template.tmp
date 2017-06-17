@@ -1,0 +1,15 @@
+{% extends "login.html" %}
+{% block loginstatus %}
+	{% if status == 1 %}
+	No est&aacute;s autorizado.
+	{% endif %}
+	{% if status == 2 %}
+	La contrase&ntilde;a no es v&aacute;lida.
+	{% endif %}
+	{% if status == 3 %}
+	El usuario es incorrecto.
+	{% endif %}
+	{% if status == 4 %}
+	Bienvenido.
+	{% endif %}
+{% endblock %}

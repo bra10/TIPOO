@@ -1,0 +1,6 @@
+{% extends "exam_finished.html" %}
+{% block messege %}
+Tu puntaje fue   {{feedback_message}} {{test_score}}
+<br /> {{count_correct_answers}} respuestas correctas de {{count_questions}}
+{% endblock %}
+

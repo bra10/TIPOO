@@ -1,0 +1,87 @@
+{% extends "view_exam.html" %}
+
+
+{% block pagination %}
+    <li ><a href="javascript: onClick=showPage('1',{{len_questions}})">&laquo;</a></li>
+    
+    <li id='l1' class="active"><a href="javascript: onClick=showPage('1',{{len_questions}})">1</a></li>
+    {% for i in range(1,len_questions) %}
+    <li id ='l{{i+1}}'><a href="javascript: onClick=showPage('{{i+1}}',{{len_questions}})">{{i+1}}</a></li>
+    {% endfor %}
+    
+    <li><a href="javascript: onClick=showPage('{{len_questions}}',{{len_questions}})">&raquo;</a></li>
+{% endblock %}
+
+
+
+
+{% block exam %}
+
+
+
+
+
+
+{% for i in range(len_questions) %}
+
+    {%if i == 0 %}
+    <div class="modal-dialog" style="display:block;" id="question{{i+1}}">
+    {% else %}
+    <div class="modal-dialog" style="display:none;" id="question{{i+1}}">
+    {% endif %}   
+       <div class="modal-content">
+         <div class="modal-header">
+            <h3><span class="label label-warning" id="qid">{{i+1}}</span> {{list_questions[i].text}}</h3>
+        </div>
+        
+             {% if list_questions[i].image != none %}
+                <img  src="/s/{{list_questions[i].image.key()}}" width='550'  >
+            {% endif %}
+
+
+
+        <div class="modal-body">
+            <div class="col-xs-3 col-xs-offset-5">
+               <div id="loadbar" style="display: none;">
+                  <div class="blockG" id="rotateG_01"></div>
+                  <div class="blockG" id="rotateG_02"></div>
+                  <div class="blockG" id="rotateG_03"></div>
+                  <div class="blockG" id="rotateG_04"></div>
+                  <div class="blockG" id="rotateG_05"></div>
+                  <div class="blockG" id="rotateG_06"></div>
+                  <div class="blockG" id="rotateG_07"></div>
+                  <div class="blockG" id="rotateG_08"></div>
+              </div>
+          </div>
+
+          <div class="quiz" id="quiz" data-toggle="buttons">
+           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="r[{{i}}]" value="1">A) {{list_questions[i].answers[0]}}</label>
+           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="r[{{i}}]" value="2">B) {{list_questions[i].answers[1]}}</label>
+           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="r[{{i}}]" value="3">C) {{list_questions[i].answers[2]}}</label>
+           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="r[{{i}}]" value="4">D) {{list_questions[i].answers[3]}}</label>
+       </div>
+        
+   </div>
+    {%if (i+1) != len_questions%}
+       <a href="javascript: onClick=showPage('{{i+2}}',{{len_questions}})"><button type="button" style= "font-family: 'Open Sans'">Siguiente Pregunta</button> </p></a>
+    {% endif %}
+    <div class="modal-footer text-muted">
+    <span id="answer"></span>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+<boton><a href="/admin_exam"> <p><button type="button" class="btn btn-success btn-lg">Regresar</button></p> </boton>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

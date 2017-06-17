@@ -1,0 +1,114 @@
+
+*{
+	margin:0;	
+	padding:0;
+}
+
+html,body{
+	font: 1rem Arial, Helvetica, sans-serif;
+	padding:0;
+	background:rgb(226,223,223);
+	min-width:800px;
+}
+
+h1{
+	text-align:center;
+	font-size:2.0rem;
+	color:rgb(184,184,184);
+}
+header{
+	overflow:hidden;
+	top:0;
+	display:inline-block;
+	width:100%;
+	position:relative;
+	background:rgb(63,63,56);
+}
+
+header li{
+	list-style-type: none;
+	display: inline-block;
+	padding:0px;
+	word-spacing: 0;
+	vertical-align:middle;
+}
+
+header a{
+	text-decoration:none;
+	color:#fff;
+	padding:10px;
+	display:block;
+	transition:all 0.5s;
+}
+header a:hover{
+	background:rgb(184,184,184);
+}
+#logo{
+	display:inline-block;
+}
+#logo img{
+	display:table-cell;
+	width:200px;
+	height:52px;
+}
+#logo figcaption{
+	vertical-align:middle;
+	display:table-cell;
+	text-align:center;
+	color:rgb(184,184,184);
+	font-size: 2rem;
+	padding-left: 25;
+	color: dimgrey;
+}
+#logo a{
+	display: table;
+	padding-bottom: 0;
+}
+#logout {
+display: block;
+float: right;
+}
+#logout a:hover{
+	background:none;
+	text-decoration:underline;
+}
+
+form div{
+	font-size:1.1rem;
+	margin:15px;
+}
+select, input[type="text"]{
+	height: 1.5rem;
+}
+
+input[type="radio"],
+article[id^="field-"]
+{
+	display:none;
+}
+
+input[type="radio"]+label:hover{
+	color:rgb(95,158,160);
+	cursor:pointer;
+}
+
+input[type="radio"]:checked+label{
+	border-bottom: 3px rgb(0,201,147) solid;
+}
+/*input[type="submit"]*/
+#sumbit{
+	display:none;
+}
+input[type="submit"]{
+	width:150px;
+	height:50px;
+	background:rgb(62, 78, 92);
+	color:white;
+	font-size:1.2rem;
+}
+input[type="submit"]:hover{
+	color:rgb(62, 78, 92);
+	background:white;
+	border:1px solid rgb(62, 78, 92);
+	cursor:pointer;
+}

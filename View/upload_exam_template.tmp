@@ -1,0 +1,10 @@
+{% extends "upload_exam.html" %}
+{% block drop_units %}
+<label for="ejemplo_password_1">Unidad:</label>
+            <select name="unit_exam" onchange="salta(this.form)">
+            <option selected>Selecciona una unidad
+            {% for u in list_units %}
+            	<option value="{{u.key().id()}}">{{u.name}}
+			{% endfor %}
+			</select>
+{% endblock %}

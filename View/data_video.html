@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html>
+<!--Template by Jonathan Nungaray @Jonatthu-->
+<head>
+    <meta charset="UTF-8">
+    <title>Publicar un nuevo video - TIPOO</title>
+	{% include 'headerinclude.html' %}
+    <link href="stylesheets/video.min.css" rel="stylesheet">
+    <link href="stylesheets/upload.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="main">
+    {% include 'header.tmp' %}
+    <div id="edit">
+        <div id="titlee"><i class="fa fa-upload"></i> Publicacion del video</div>
+
+     <form id="sessionForm" action="data_video" method="post" novalidate="validate">
+        {% block data_block %}{% endblock %}
+    </form>
+
+    </div>
+</div>
+<script src="js/validate.min.js"></script>
+<script src="js/validateform.min.js"></script>
+    </body>
+</html>

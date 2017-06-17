@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="video/mp4" />	
+	{% include 'headerinclude.html' %}
+	<script type="text/javascript" src="js/view_video.js"></script>
+	<title>{{vinfo.topic}} -Tipoo Videos</title>
+	<link rel="stylesheet" href="/stylesheets/view_video.css">
+</head>
+<body>
+	{% include 'header.tmp' %}
+	
+	{% block view_video %}{% endblock %}	
+</body>
+</html>

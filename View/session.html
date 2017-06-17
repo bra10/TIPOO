@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<!-- Design by Jonathan Nungaray @Jonatthu -->
+<head>
+    <meta charset="UTF-8">
+    <title>TIPOO - Tutorial inteligente para la enseñanza de la programacion orientada a objetos.</title>
+    <link href="stylesheets/session.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//use.edgefonts.net/abel.js"></script>
+</head>
+
+<body>
+	{{html}}
+    {{url}}    
+    <div id="session">
+            <div id="title2"><a href="/"><i class="fa fa-inbox"></i>Tipoo</a><br><br> <a href="/"><small>( Sessions Center )</small></a>
+    </div>
+        <div id="menu">
+            <div id="logM" class="active" data-target="login"><i class="fa fa-plug"></i> Iniciar Sesión</div>
+            <div id="regM" data-target="signup"><i class="fa fa-pencil"></i> Registrate</div>
+        </div>
+		<a href="/tutor"><div id="fblog"><i class="fa fa-graduation-cap"></i> Registrar un Tutor</div></a>
+        <div class="line"><span>Ó</span></div>
+        <div id="login">
+            <form id="sessionForm" action="/signin" method="post"> 
+                <input id="inUser" type="text" name="email" placeholder="Escribe tu email">
+                <br>
+                <input id="inPass" type="password" name="pwd" placeholder="Escribe tu Contraseña">
+                <br>
+                <button id="loadSession" class="lnd">Iniciar Sesión</button>
+            </form>
+        </div>
+        <div id="signup">
+  
+            <form id="regForm" action="/signup" method="post">
+                <input id="ssUser" type="text" name="user" placeholder="Ingresa tu nombre">
+                <br>
+                <input id="ssPass" type="password" name="pwd" placeholder="Inventa una Contraseña">
+                <br>
+                <input id="ssEmail" type="text" name="email" placeholder="Escribe tucorreo@email.com">
+                <br>
+                <button id="register" class="lnd">Registrarse</button>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/validate.min.js"></script>
+    <script type="text/javascript" src="js/session.min.js"></script>
+
+</body>
+
+</html>

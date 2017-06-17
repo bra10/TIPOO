@@ -1,0 +1,51 @@
+{% extends "subject_content.html" %}
+{% block units %}
+
+            <p></p>
+  			<center><h1 class="page-header">{{subject}}</h1></center>
+  			<br></br>
+  {% for unit in list_units %}
+
+  	    <div class="container">
+        <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+		{% if type == '1' %}
+			         <div class="post-preview type_{{type}}">
+						<h2 class="post-title"> 
+						<a href="/admin_text?unit_id={{list_units[loop.index0].id}}">
+						<i class="fa fa-pencil-square-o fa-stack- "></i>
+                         </i>{{list_units[loop.index0].name}}</h2> </a>
+         </div>
+         </div>
+         </div>
+         </div>
+
+
+					
+		{% elif type == '2' %}
+			<div class="post-preview type_{{type}}">
+						<h2 class="post-title"> 
+						<a href="/admin_video?unit_id={{list_units[loop.index0].id}}">
+						<i class="fa fa-pencil-square-o fa-stack- "></i>
+                         </i>{{list_units[loop.index0].name}}</h2> </a>
+         </div>
+         </div>
+         </div>
+         </div>
+		{% elif type == '3' %}
+			<div class="post-preview type_{{type}}">
+						<h2 class="post-title"> 
+						<a href="/admin_exam?unit_id={{list_units[loop.index0].id}}">
+						<i class="fa fa-pencil-square-o fa-stack- "></i>
+                         </i>{{list_units[loop.index0].name}}</h2> </a>
+         </div>
+         </div>
+         </div>
+         </div>
+		{% endif %}
+		<br></br>
+	{% endfor %}</div>
+  <div class="col-md-4"></div>
+</div>
+	
+{% endblock %}

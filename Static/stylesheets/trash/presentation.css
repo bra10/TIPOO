@@ -1,0 +1,25 @@
+.page{
+	position:relative;
+	width:100%;
+	min-height:100%;
+}
+
+#about{
+	background:#0caad3 url('/img/banner.png') fixed center no-repeat;
+}
+
+#courses{
+	background:#000;
+}
+
+#faq{
+	background:#fff;
+}
+
+#share{
+	background:#eee;
+}
+
+#signup{
+	background:#aaa;
+}

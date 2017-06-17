@@ -1,0 +1,43 @@
+{% extends "content_home.html" %}
+
+{% block cont_title %}
+	<p>{{cont_subject}}</p>
+{% endblock %} 
+
+{% block cont_level %}
+	<ul>
+	<li><span>Complejidad</span></li>
+	{% for id,level in levels %}
+	<li>
+		{% if level_available[id] %}<input id="radio-level{{id}}" type="radio" name="level" value="{{id}}" {% if rec_level[id] %} checked {% endif %}/>{% endif %}
+		<label for="radio-level{{id}}" {% if not level_available[id] %} class="unavailable"{% endif %} >{{level}}</label>
+	</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block cont_style %}
+	<ul>
+	<li><span>Estilo</span></li>
+	{% for id,style in styles %}
+	<li>
+		{% if  style_available[id] %}<input id="radio-style{{id}}" type="radio" name="style" value="{{id}}" {% if rec_style[id] %} checked {% endif %}/>{% endif %}
+		<label for="radio-style{{id}}" {% if not style_available[id] %} class="unavailable"{% endif %} >{{style}}</label>
+	</li>
+	{% endfor %}
+	</ul>
+{% endblock %} 
+
+{% block cont_button %}
+	<a {% if test %} id="test" href="{{rec_test_id}}"  {% else %} class="unavailable" {% endif %}>Ex&aacute;men</a>
+	<a {% if exercises %} id="exersices" href="{{rec_ex_id}}" {% else %} class="unavailable"{% endif %}>Ejercicios</a>
+{% endblock %} 
+
+{% block iframe %}
+	
+      <!--text --> <iframe src="http://docs.google.com/viewer?url={{url}}s/{{key}}&embedded=true" width="600" height="780" style="border: none;"></iframe>           
+	
+	{% if video %}
+      <!--video --> <iframe src="http://docs.google.com/viewer?url={{url}}s/{{key}}&embedded=true" width="600" height="780" style="border: none;"></iframe>           
+	{% endif %}
+{% endblock %}

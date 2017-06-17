@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<!--Template by Jonathan Nungaray @Jonatthu-->
+<head>
+    <meta charset="UTF-8">
+    <title>Publicar un nuevo video - TIPOO</title>
+    <link href="stylesheets/video.min.css" rel="stylesheet">
+    <link href="stylesheets/upload.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="stylesheets/dropzone.css">
+	<script src="js/jQuery.2.1.3.min.js"></script>
+    {% include 'headerinclude.html' %}
+</head>
+
+<body>
+<div id="main">
+{% include 'header.tmp' %}
+
+<div id="edit">
+    <div id="titlee"><i class="fa fa-upload"></i> Publica un nuevo video</div>
+    <form class="dropzone" id="sessionForm" action="{{upload_url}}" method="post" enctype="multipart/form-data">
+    <div id="infoVideo">
+        <div id="text"><i class="fa fa-plus"></i><br>HAZ CLICK O ARRASTRA EL ARCHIVO <br>AQUÍ</div>
+			<input id="invideo" type="file" name="file" /><br><br>
+        <ul></ul>
+    </div>
+	<div id="text"><center></i><br><br><font size="3">Ó INCLUYA UNA URL DE YOUTUBE AQUÍ</font></center>
+			<center><input id="myUrl" type="text" style="width: 400px;"/></center>
+	</div>
+
+    </form>
+	<center><a href="/data_video"><button id="myBtn" class="lnd"><i class="fa fa-paper-plane"></i>  Guardar</button></a></center>
+	
+	<!--Boton Prueba-->
+	<center><button id="prueba" class ="lnd">Prueba</button><br><br>
+		<div>
+		<div>YouTube ID: <span id="myId"></span><br>
+		<!--Código del embed agregado-->
+		<pre id="myCode"></pre>
+		</div>
+	</center>
+</div>
+
+
+
+
+</div>
+
+ 	<script src="js/drophere.min.js"></script>
+    <script src="js/drophere.extends.js"></script>
+    <script src="js/validate.min.js"></script>
+    <script src="js/validateform.min.js"></script>
+	<script src="js/youtube-embed.js"></script>
+
+    </body>
+</html>

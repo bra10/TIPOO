@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Designed by Jonathan Nungaray @Jonatthu -->
+<html>
+	<head>
+		{% include 'headerinclude.html' %}
+		<title>Tracker TIPOO</title>
+    	<link rel="stylesheet" href="stylesheets/tracker.css">
+		<script src="js/tracker.js"></script>
+	</head>
+	<body>
+		{% include 'header.tmp' %}
+		{% block all_track %}{% endblock %}		
+<br><br><br>
+
+    <div>
+        <label for="fromDate">Del </label>
+        <input type="date" id="fromDate" name="startDate" />
+        <label for="toDate"> al </label>
+        <input type="date" id="toDate" name="endDate" />
+    </div>
+    <div>
+        <button id="poost">Buscar registros de eventos</button>
+    </div>    
+
+</div>
+<div id="new_div">
+</div>
+</div>
+
+
+    
+	</body>
+</html>

@@ -1,0 +1,52 @@
+{% if user %}
+
+<div id="navBar" class="mainbg navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul id="logoSection" class="nav navbar-nav">
+            <li><a href="/"><i class="fa fa-inbox"></i>Tipoo</a></li>
+        </ul>
+        <ul id="searchSection" class="nav navbar-nav">
+            <li><i class="fa fa-search"></i></li>
+			<li><form action="/something"><input id="search" name="search" placeholder="Buscar en Tipoo"></form></li>
+        </ul>        
+        <ul id="userSection" class="nav navbar-nav">
+            <li><a href="/home" class="active"><i class="fa fa-home"></i>  Inicio</a></li>
+            <li><a href="/"><i class="fa fa-plug"></i>
+            {% if user == 'Tutor' %}
+                {{tutor_name}}
+            {% else %}
+                {{student_name}}
+            {% endif %}     
+            </a></li>
+
+            <li><a href="/logout"><i class="fa fa-pencil"></i>  Cerrar Sesión</a></li>
+        </ul>
+        <ul>
+            <li id="bar"><i class="fa fa-bars"></i></li>
+            <li id="barT"><i class="fa fa-bars"></i></li>
+        </ul>
+    </div>
+</div>
+    
+    {% else %}
+    
+    <div id="navBar" class="mainbg">
+        <ul id="logoSection">
+            <li><a href="/"><i class="fa fa-inbox"></i>Tipoo</a></li>
+        </ul>
+        <ul id="searchSection">
+            <li><i class="fa fa-search"></i></li>
+            <li><form action="/something"><input id="search" name="search" placeholder="Buscar en Tipoo"></form></li>
+        </ul>        
+        <ul id="userSection">
+            <li><a href="/" class="active"><i class="fa fa-home"></i>  Inicio</a></li>
+            <li><a href="/login"><i class="fa fa-plug"></i>  Iniciar Sesión</a></li>
+            <li><a href="/login#signup"><i class="fa fa-pencil"></i>  Registrarse</a></li>
+        </ul>
+        <ul>
+            <li id="bar"><i class="fa fa-bars"></i></li>
+            <li id="barT"><i class="fa fa-bars"></i></li>
+        </ul>
+    </div>
+    
+    {% endif %}

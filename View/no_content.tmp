@@ -1,0 +1,23 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+					<h1 class="post-title">
+						<br><br>
+						<center>
+							<boton> 
+								<img src="img/none.png">
+								<br><br>
+								</i> No hay contenido disponible. </h1> </boton>
+						</center>		
+                </div> 
+							
+				<br><br><br><br><br><br>
+				<!-- BOTON DE COMENZAR EXAMEN -->
+				
+				<boton> <p><a href="#"><button type="button" class="btn btn-success btn-lg">Regresar</button></p></a> </boton>
+               
+				<br><br>
+			
+              

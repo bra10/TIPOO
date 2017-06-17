@@ -1,0 +1,28 @@
+{% extends "home_text.html" %}
+
+{% block upload_button %}
+	{% if user == 'Tutor' %}
+		<div class="buttonupload col-md-2 col-sm-offset-5">
+						{% endif %}
+            <a href="/upload_text" class="btn btn-default">Subir nuevo Texto</a>
+        </div>
+{% endblock %}
+
+{% block type_user %}
+
+	{% if user == 'Tutor' %}
+
+		{{tutor_name}}
+	{% else %}
+		{{student_name}}
+	{% endif %}
+{% endblock %}
+
+
+{% block texts_list %}
+	{% if html %}
+		{{html}}
+	{% else %}
+		<p id="notexts">;( <br> No hay textoss disponibles</p>
+	{% endif %}
+{% endblock %}

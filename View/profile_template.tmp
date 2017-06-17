@@ -1,0 +1,7 @@
+{% extends "profile.html" %}
+
+{% if user == 'Student' %}
+
+{% elif user == 'Tutor' %}
+
+{% endif %}

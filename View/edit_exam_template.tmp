@@ -1,0 +1,151 @@
+{% extends "edit_exam.html" %}
+
+
+{% block edit_exam %}
+    <form  action = '/{{upload_url}}' method = "post" enctype="multipart/form-data" data-abide>
+		
+        <div class="form-group">
+            <label for="ejemplo_email_1">Nombre:</label>
+            <input type="text"  name="name_exam" class="form-control" value="{{name}}" 
+            placeholder="Introduce nombre del examen" >
+        </div>
+        
+        <div class="form-group">
+            <label for="ejemplo_password_1">Tema:</label>
+            <input type="text" class="form-control" name="topic_exam" value="{{topic}}" 
+           placeholder="Introduce tema del examen">
+        </div>
+        
+        <div class="form-gropp">
+        <label for="ejemplo_password_1">Unidad:</label>
+            <select name="unit_exam" onchange="salta(this.form)">
+            <option selected>Selecciona una unidad
+            {% for u in list_units %}
+                {% if unit.name == u.name %}
+                   <option value="{{u.key().id()}}" selected>{{u.name}}
+                {% else %}
+                   <option value="{{u.key().id()}}" >{{u.name}}
+                {% endif %}
+            {% endfor %}
+            </select>
+        </div>
+        
+        	<input type="hidden" class="form-control" name="id_exam"  value="{{id_exam}}">
+        	<input type="hidden" class="form-control" id="len_questions" name="count_questions"  value="{{len_questions}}">
+        
+        <div class="form-groppp">
+            <label for="ejemplo_password_1">Tipo de aprendizaje:</label>
+            <select onchange="salta(this.form)" name="learning_type" >          
+
+            <option selected> 
+            {% if learning_type == 1 %}
+               <option value="1" selected>Visual
+            {% else %}
+            	<option value="1" >Visual
+            {% endif %}
+            
+            {% if learning_type == 2 %}
+               <option value="2" selected>Auditivo
+            {% else %}
+            	<option value="2" >Auditivo
+            {% endif %}
+
+            {% if learning_type == 3 %}
+               <option value="3" selected>Kinestesico
+            {% else %}
+            	<option value="3" >Kinestesico
+            {% endif %}
+
+
+
+
+            </select>
+           
+        </div>
+
+        
+        <div class="form-gro">
+            <label for="ejemplo_password_1">Nivel:</label>
+            <select onchange="salta(this.form)" name="level" value="{{level}}">
+            <option selected> 
+            
+            {% if level == 1 %}
+               <option value="1" selected>1
+            {% else %}
+            	<option value="1" >1
+            {% endif %}
+            
+            {% if level == 2 %}
+               <option value="2" selected>2
+            {% else %}
+            	<option value="2" >2
+            {% endif %}
+
+            {% if level == 3 %}
+               <option value="3" selected>3
+            {% else %}
+            	<option value="3" >3
+            {% endif %}
+
+
+            </select>
+            
+        </div>
+        
+        <br><br><br><br><br><br><br><br><br>
+
+        <hr size="10">
+
+        <div id="addQuestions">
+        <!-- Stuff automatically generated -->
+
+            
+            {% for i in range(len_questions) %}
+                <div class="question-block" id="QDIV_{{i+1}}">
+                <input type="TEXT" class="question" name="Q_{{i+1}}" placeholder="Pregunta" value="{{list_questions[i].text}}" style="font-size: 15px;">
+                <input type="TEXT" class="possible-points" name="PossPtsQ_{{i+1}}" placeholder="Posibles puntos" value="{{list_questions[i].value}}" style="font-size: 15px;">
+                
+                <input type="FILE" class="image" name="Q_I{{i+1}}" placeholder="Cargar Imagen" style="font-size: 15px; text-align: left;"/>
+                <br/>
+
+                <input type="TEXT" class="answer" name="Q_{{i+1}}_A_1" placeholder="Respuesta 1" value="{{list_questions[i].answers[0]}}" style="font-size: 20px;">
+                {% if 1 in list_questions[i].correct_answers %}
+                    <input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_1" checked>
+                {% else %}
+                	<input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_1" >
+                {% endif %}
+                
+                <input type="TEXT" class="answer" name="Q_{{i+1}}_A_2" placeholder="Respuesta 2" value="{{list_questions[i].answers[1]}}" style="font-size: 20px;">
+                {% if 2 in list_questions[i].correct_answers %}
+                     <input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_2" checked>
+                {% else %}
+                	 <input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_2" >
+                {% endif %}
+                
+                <input type="TEXT" class="answer" name="Q_{{i+1}}_A_3" placeholder="Respuesta 3" value="{{list_questions[i].answers[2]}}" style="font-size: 20px;">
+                {% if 3 in list_questions[i].correct_answers %}
+                	<input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_3" checked>
+                {% else %}
+                	<input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_3" >
+                {% endif %}
+
+                <input type="TEXT" class="answer" name="Q_{{i+1}}_A_4" placeholder="Respuesta 4" value="{{list_questions[i].answers[3]}}" style="font-size: 20px;">
+                {% if 4 in list_questions[i].correct_answers %}
+                    <input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_4" checked>
+                {% else %}
+                    <input type="checkbox" class="checkbox-answer" name="Q_{{i+1}}_ChkBox_4" >
+                {% endif %}
+
+
+
+
+                </div>
+				
+			{% endfor %}
+        
+
+        </div>
+        
+        
+        
+{% endblock %}

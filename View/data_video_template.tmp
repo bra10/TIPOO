@@ -1,0 +1,39 @@
+{% extends "data_video.html" %}
+
+
+{% block data_block %}
+{% if edit %}
+	<input id="title" type="text" name="title" placeholder="Escribe el titulo" value="{{vinfo.topic.name}}">
+        <br><select name="level" placeholder="Selecciona el nivel">
+            <option>Selecciona el nivel</option>
+            <option value="1">Basico</option>
+            <option value="2">Intermedio</option>
+            <option value="3">Avanzado</option>
+        </select>
+     
+     <select name="unit"> {% for u in list_unit %} <option value="{{u.id}}">{{u.name}}</option> {% endfor %} </select>
+        <br>
+        <textarea id="des" type="text" name="description" placeholder="Escribe la descripcion">{{vinfo.description}}</textarea>	
+        <br>
+        <input type="text" name="tags" placeholder="Escribe tags separadas con coma" value="{{vinfo.tags[0]}}"/>
+        <br>
+		<input type="hidden" name="video_material_id" value="{{video_material_id}}" />
+        <center><button id="loadSession" class="lnd" type="submit" value="Submit"><i class="fa fa-paper-plane"></i> Guardar</button></center>
+{% else %}
+<input id="title" type="text" name="title" placeholder="Escribe el titulo">
+        <br><select name="level" placeholder="Selecciona el nivel">
+            <option>Selecciona el nivel</option>
+            <option value="1">Basico</option>
+            <option value="2">Intermedio</option>
+            <option value="3">Avanzado</option>
+        </select>
+     <select name="unit"> {% for u in list_unit %} <option value="{{u.id}}">{{u.name}}</option> {% endfor %} </select>
+        <br>
+        <textarea id="des" type="text" name="description" placeholder="Escribe la descripcion"></textarea>
+        <br>
+        <input type="text" name="tags" placeholder="Escribe tags separadas con coma" />
+        <br>
+		<input type="hidden" name="video_material_id" value="{{video_material_id}}" />
+        <center><button id="loadSession" class="lnd" type="submit" value="Submit"><i class="fa fa-paper-plane"></i> Guardar</button></center>
+{% endif %}
+{% endblock %}

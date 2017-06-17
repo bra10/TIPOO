@@ -1,0 +1,179 @@
+#main {
+    margin-bottom: 100px;
+}
+
+body {
+	font-family: abel, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color:none;
+}
+
+#search {
+  background: none;
+  border: none;
+  color: white;
+  padding: none;
+  font-family: 'Open Sans', sans-serif;
+  width: none;
+  border-radius: none;
+  border: 0px solid #9d9d9d;
+  font-size: 15px;
+  box-sizing: none;
+  text-align: left;
+  margin-top: 0px;
+}
+
+.tutor {
+	display: none;
+}
+
+#navBar {
+	position: fixed;
+	background: #1c1c1c;
+	width: 100%;
+	z-index: 1000;
+	height: 60px;
+	overflow: hidden;
+	color: white;
+	top: 0;
+	left: 0;
+	font-size: 16px
+}
+
+#navBar a {
+	color:white;
+}
+
+#navBar ul {
+	list-style: none;
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	line-height: 60px;
+	font-size: 16px;
+	padding: 0
+}
+
+#navBar #bar {
+	display: none
+}
+
+#navBar #barT {
+	display: none
+}
+
+#navBar #logoSection {
+	position: fixed;
+	background: ;
+	top: 0;
+	padding: 0 15px 0 25px;
+	left: 20px;
+	height: 60px
+}
+
+#navBar #logoSection li {
+	display: inline-block;
+	font-size: 35px;
+	padding: 0;
+	font-weight: 700;
+	margin: 0
+}
+
+#navBar #searchSection {
+	position: fixed;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	top: 0;
+	cursor: pointer;
+	left: 170px
+}
+
+#navBar #searchSection li {
+	display: inline-block
+}
+
+#navBar #userSection {
+	position: fixed;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	right: 20px
+}
+
+#navBar #userSection li {
+	display: inline-block;
+	width: auto;
+	margin-right: 15px
+}
+
+#navBar li .fa-search {
+	margin-left: 10px;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg)
+}
+
+@media screen and (max-width: 700px) {
+	#navBar #logoSection {
+		left: 10px
+	}
+	#navBar #searchSection {
+		left: 120px
+	}
+	#navBar #userSection {
+		right: 0
+	}
+	#navBar #userSection li {
+		margin-right: 10px
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#navBar #bar {
+		display: inline;
+		position: fixed;
+		z-index: 99;
+		font-size: 25px;
+		right: 20px;
+		top: 2px
+	}
+	#navBar #barT {
+		display: none;
+		position: fixed;
+		font-size: 25px;
+		right: 20px;
+		top: 2px
+	}
+	#navBar #logoSection {
+		font-size: 35px
+	}
+	#navBar #searchSection i,
+	#navBar #userSection i {
+		font-size: 20px;
+		line-height: 50px
+	}
+	#navBar #logoSection {
+		left: 10px
+	}
+	#navBar #searchSection {
+		top: 60px;
+		position: absolute;
+		width: 100%;
+		background: #3b3b3b;
+		left: 0
+	}
+	#navBar #userSection {
+		top: 120px;
+		position: absolute;
+		left: 0;
+		width: 100%
+	}
+	#navBar #userSection li {
+		display: table;
+		padding-left: 10px;
+		border-bottom: 1px solid #3c3c3c;
+		width: 100%
+	}
+}

@@ -1,0 +1,97 @@
+{% extends "newhome.html" %}
+
+{% block content %}
+	{% if user == 'Tutor' %}				
+		<div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+					<a href="/admin_text">
+                        <h2 class="post-title">
+						<i class="fa fa-file-pdf-o fa-stack- "></i>
+                          </i> Gestion Recursos didacticos
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Edita, modifica y agrega contenido al curso.
+                        </h3>
+                    </a>
+                    <!--<p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p> -->
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="/admin_video">
+                        <h2 class="post-title"> <i class="fa fa-film fa-stack-"></i>
+                           Gestion de Videos
+                        </h2>
+						 <h3 class="post-subtitle">
+                            Edita, modifica y agrega videos.
+                        </h3>
+                    </a>
+
+                </div>
+                <hr>
+                <div class="post-preview">
+                      <a href="/admin_exam"> 
+                        <h2 class="post-title"> <i class="fa fa-check-square-o fa-stack-"></i>
+                            Gestion de Examenes
+                        </h2>
+                        <h3 class="post-subtitle">
+                           Edita, modifica y agrega Examenes.
+                        </h3>
+                    </a>
+                </div>
+                <hr> 
+                <!--
+				<div class="post-preview">
+                    <a href="GestionDeEjercicios.html">
+                        <h2 class="post-title"> <i class="fa fa-file-text-o fa-stack-"></i>
+                            Gestion de Ejercicios
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Edita, modifica y agrega ejercicios.
+                        </h3>
+                    </a>
+				</div>
+            </div>
+        </div>
+{% else %}		
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="/subject_content?type=1">
+                        <h2 class="post-title">
+                        <i class="fa fa-file-pdf-o fa-stack- "></i>
+                          </i> Recursos didacticos
+                        </h2>
+                        <h3 class="post-subtitle">
+                         Encuentra información que te ayudará a entender los conceptos basicos del paradigma orientada a objetos.   
+                        </h3>
+                    </a>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="/subject_content?type=2">
+                        <h2 class="post-title"> <i class="fa fa-film fa-stack-"></i>
+                            Videos
+                        </h2>
+                         <h3 class="post-subtitle">
+                            Aprende el paradigma de programacion orientada a objetos a travez de videos didacticos.
+                        </h3>
+                    </a>
+                </div>
+                <hr>
+                <div class="post-preview">
+                      <a href="/subject_content?type=3"> 
+                        <h2 class="post-title"><i class="fa fa-check-square-o fa-stack-"></i>
+                            Exámenes
+                        </h2>
+                        <h3 class="post-subtitle">
+                           Realiza tu evaluación.
+                        </h3>
+                    </a>
+                </div>
+                <hr> 
+            </div>
+        </div>
+	{% endif %}		
+{% endblock %}

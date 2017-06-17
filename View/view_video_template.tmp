@@ -1,0 +1,31 @@
+{% extends "view_video.html" %}
+
+{% block view_video %}
+
+<div id="viewvideo">
+	{% if vinfo.format == 'mp4' or vinfo.format == 'mkv'  %}
+		<video id="videoElementID" width="320" height="240" controls>
+			<source src="/s/{{vinfo.content.key()}}" type="video/mp4">
+		</video>
+	{% elif vinfo.format == 'mov' %}		
+		<embed src="/s/{{vinfo.content.key()}}" width="600" height="400" autoplay="false" play="false" menu="true" controller="true"></embed>	    	
+	{% elif vinfo.format == 'wmv' or vinfo.format == 'mpg' %}
+		<embed width="420" height="315" src="/s/{{vinfo.content.key()}}">			
+	{% elif vinfo.format == 'webm' %}	
+		<video id="videoElementID" width="320" height="240" controls>
+			<source src="/s/{{vinfo.content.key()}}" type="video/webm">
+		</video>
+	{% elif vinfo.format == 'ogg' %}	
+		<video id="videoElementID" width="320" height="240" controls>
+			<source src="/s/{{vinfo.content.key()}}" type="video/ogg">
+		</video>
+	{% endif %}
+	<div id="bottom">
+		<h1><i class="fa fa-video-camera"></i> {{vinfo.topic}}</h1>
+		<h2><i class="fa fa-graduation-cap"></i> En {{vinfo.subject}} por {{vinfo.tutor}}</h2>
+		<p>{{vinfo.description}}</p>
+ 
+	</div>
+</div>
+	
+{% endblock %}

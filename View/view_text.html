@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/pdf" />	
+	{% include 'headerinclude.html' %}
+	<script type="text/javascript" src="js/view_text.js"></script>
+	<title>{{tinfo.topic}} -Tipoo Textos</title>
+	<link rel="stylesheet" href="/stylesheets/view_text.css">
+    <style type="text/css">
+        #content {
+    border: 1px solid #000;
+    overflow-y:auto;
+    height:100%;
+}
+    </style>
+</head>
+<body>
+	{% include 'header.tmp' %}
+	
+	{% block view_text %}{% endblock %}	
+</body>
+</html>

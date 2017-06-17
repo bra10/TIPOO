@@ -1,0 +1,81 @@
+<!--
+
+	registroDeTutores.html
+	Ver. 1
+	por Ian Alfonso Ruiz Naranjo
+	@Ian_A_Ruiz_N
+	/ian.a.ruiz.n
+	Primavera, 2015
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TIPOO Registro de Tutores</title>
+	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/registroDeTutores.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/registroDeTutores.js"></script>
+</head>
+<body>
+	{{html}}
+	<form id="contenedor" class="contenedor" action="/tutor" method="post" onsubmit="return validacion()">
+		<a href="/" class="logo">
+			Tipoo
+		</a>
+		<div class="titulo">
+			Registro de Tutores
+		</div>
+		<div class="linea"></div>
+		<div class="campo">
+			<input id="campoNombre" name="name" type="text" class="caja" value="Ingrese su nombre">
+			<div id="avisoNombre" class="aviso">
+				
+			</div>
+		</div>
+		<div class="campo">
+			<input id="campoCorreo" name="email" type="text" class="caja" value="Ingrese su correo">
+			<div id="avisoCorreo" class="aviso">
+				
+			</div>
+		</div>
+		<div class="campo">
+			<input id="campoContrasena" name="password" type="password" class="caja" value="Ingrese su contrasena">
+			<div id="avisoContrasena" class="aviso">
+				
+			</div>
+		</div>
+		<div class="campo" name="university">
+			<select id="selectorDeUniversidades" class="cajaOpciones">
+				<option>
+					Seleccione una universidad
+				</option>
+				<option value="Independiente">
+					Independiente
+				</option>
+				<option value="UABC Universidad Autonoma de Baja California">
+					UABC Universidad Autonoma de Baja California
+				</option>
+				<option value="TEC Instituto Tecnologico de Tijuana">
+					TEC Instituto Tecnologico de Tijuana
+				</option>
+				<option value="UNAM Universidad Nacional Autonoma de Mexico">
+					UNAM Universidad Nacional Autonoma de Mexico
+				</option>
+			</select>
+			<div id="avisoUniversidad" class="aviso">
+				
+			</div>
+		</div>
+		<div id="contenedorDeSelectorDeFacultades" class="campo">
+			<select id="selectorDeFacultades" class="cajaOpciones">
+				
+			</select>
+		</div>
+		<div class="linea2"></div>
+		<input type="submit" class="boton" value="Registrarse">
+		<div class="linea2"></div>
+	</form>
+</body>
+</html>
